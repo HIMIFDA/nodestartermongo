@@ -2,6 +2,10 @@
 
 Starter kit for web application using NodeJS and MongoDB
 
+# Installation
+
+npm install
+
 
 
 ## License
