@@ -1,0 +1,27 @@
+<%- include ../layouts/header.ejs %>
+<%- include ../layouts/nav.ejs %>
+
+<div class="container">
+	<h1>Profile</h1>
+
+	<br><br>
+	<form method="POST" action="/profile/store">
+		
+		<div class="form-group">
+			<input type="text" name="full_name" placeholder="Name..." class="form-control">
+		</div>
+
+
+		<div class="form-group">
+			<input type="text" name="address" placeholder="Address..." class="form-control">
+		</div>
+
+
+		<div class="form-group">
+			<input type="submit" name="submit" value="Store" class="btn btn-primary">
+		</div>
+
+	</form>
+</div>
+
+<%- include ../layouts/footer.ejs %>

@@ -2,6 +2,8 @@ var Index = require('../routes/index');
 var Student = require('../routes/student');
 var Register = require('../routes/register');
 var Login = require('../routes/login');
+var Profile = require('../routes/profile');
+var Course = require('../routes/course');
 
 module.exports = function(app, upload, passport) {
 
@@ -13,6 +15,13 @@ module.exports = function(app, upload, passport) {
 	app.get('/student/edit/:id', isLoggedIn, Student.edit);	
 	app.post('/student/update/:id', isLoggedIn, Student.update);
 	app.get('/student/destroy/:id', isLoggedIn, Student.destroy);
+	app.get('/profile', isLoggedIn, Profile.index);
+	app.post('/profile/store', isLoggedIn, Profile.store);
+
+	app.get('/course', isLoggedIn, Course.index);
+	app.post('/course/store', isLoggedIn, Course.store);
+	app.get('/course/edit/:_id', isLoggedIn, Course.edit);
+	app.post('/course/update/:id', isLoggedIn, Course.update);
 
 	app.get('/login', isGuest, Login.index);
 	app.post('/do/login', passport.authenticate('local-login', {

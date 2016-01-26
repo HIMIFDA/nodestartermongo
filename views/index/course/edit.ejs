@@ -1,0 +1,34 @@
+<%- include ../layouts/header.ejs %>
+<%- include ../layouts/nav.ejs %>
+
+<div class="container">
+	<h1>Course</h1>
+
+	<br><br>
+	<form method="POST" action="/course/update/<%= course.id %>">
+		
+		<div class="form-group">
+			<select name="student_id" class="form-control">
+				<% students.forEach(function(student) { %>
+				     <option value="<%= student.id %>" <% if(student.id == course._student_id.id) { %> selected <% } %>>
+				     	<%= student.name %>
+				     </option>
+				<% }); %>			
+			</select>
+		</div>
+
+
+		<div class="form-group">
+			<input type="text" name="course" value="<%= course.course %>" class="form-control">
+		</div>
+
+
+		<div class="form-group">
+			<input type="submit" name="submit" value="Store" class="btn btn-primary">
+		</div>
+
+	</form>
+
+</div>
+
+<%- include ../layouts/footer.ejs %>
